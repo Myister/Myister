@@ -1,4 +1,4 @@
-### Hi there 👋
+### 计算机初学者XD 目前在学习C++ 👋
 
 <!--
 **Myister/Myister** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
