@@ -46,9 +46,11 @@ def read_file(path1,path2,path3):
         f.close()
         return rate
 
-
-read_file('D:\PythonCode\Code1\orig.txt','D:\PythonCode\Code1\orig_0.8_dis_15.txt','D:\PythonCode\Code1\JG.txt')
-
+def main_test():
+    result=round(read_file('D:\PythonCode\Code1\orig.txt','D:\PythonCode\Code1\orig_0.8_dis_15.txt','D:\PythonCode\Code1\JG.txt'),2)
+    return result
+if __name__ == '__main__':
+    main_test()
 
 
 
