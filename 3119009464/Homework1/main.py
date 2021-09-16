@@ -1,6 +1,7 @@
 import jieba
 import re
 from math import sqrt
+import os
 
 
 def read_file(path1,path2,path3):
@@ -8,7 +9,6 @@ def read_file(path1,path2,path3):
     ignore_list = [u'的',u'了',u'和',u'呢',u'啊',u'哦',u'恩',u'嗯',u'吧'];
     accepted_chars = re.compile(r"[\u4E00-\u9FA5]+")
     file_object = open(path1,encoding='utf-8')
-
     try:
         all_the_text = file_object.read()
         seg_list = jieba.cut(all_the_text, cut_all=True)
@@ -47,7 +47,17 @@ def read_file(path1,path2,path3):
         return rate
 
 def main_test():
-    result=round(read_file('D:\PythonCode\Code1\orig.txt','D:\PythonCode\Code1\orig_0.8_dis_15.txt','D:\PythonCode\Code1\JG.txt'),2)
+    size1 = os.path.getsize('D:\PythonCode\Code1\.txt')
+    size2 = os.path.getsize('D:\PythonCode\Code1\orig_0.8_dis_15.txt')
+
+    if size1 == 0:
+        print('原文件是空的')
+        return 0
+    elif size2 == 0:
+        print('对比文件为空')
+        return 0
+    else:
+        result=round(read_file('D:\PythonCode\Code1\orig.txt','D:\PythonCode\Code1\orig_0.8_dis_15.txt','D:\PythonCode\Code1\JG.txt'),2)
     return result
 if __name__ == '__main__':
     main_test()
